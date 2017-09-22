@@ -25,14 +25,14 @@ public class RestWebController {
 	List<Employee> emp = new ArrayList<Employee>();
 	
 	
-	@RequestMapping(value = "/getallcustomer", method = RequestMethod.GET)
+	@RequestMapping(value = "/getallemployees", method = RequestMethod.GET)
 	public List<Employee> getResource(){
 		emp = (ArrayList<Employee>)employeeRepository.findAll();
 		return emp;
 	}
 	
-	@RequestMapping(value="/postcustomer", method=RequestMethod.POST)
-	public Employee postCustomer(@RequestBody Employee employee){
+	@RequestMapping(value="/postemployee", method=RequestMethod.POST)
+	public Employee postEmployee(@RequestBody Employee employee){
 		//emp.add(employee);
 		employee = (Employee) employeeRepository.save(employee);
 		return employee;

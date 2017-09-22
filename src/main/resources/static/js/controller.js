@@ -1,7 +1,7 @@
 var app = angular.module('app', []);
 app.controller('postcontroller', function($scope, $http, $location) {
       $scope.submitForm = function(){
-            var url = $location.absUrl() + "postcustomer";
+            var url = $location.absUrl() + "postemployee";
             
             var config = {
                 headers : {
@@ -37,7 +37,7 @@ app.controller('getcontroller', ['$scope', '$http', '$filter', '$location', func
 		$scope.data = [];
 		$scope.q = '';
       $scope.getfunction = function(){
-            var url = $location.absUrl() + "getallcustomer";
+            var url = $location.absUrl() + "getallemployees";
             
             var config = {
                 headers : {
@@ -83,8 +83,8 @@ app.controller('getcontroller', ['$scope', '$http', '$filter', '$location', func
                   $scope.search = function()
                       { 
                          $scope.filteredList  = _.filter($scope.response,
-                                   function(cust){  
-                                       return searchUtil(cust,$scope.searchText); 
+                                   function(employee){  
+                                       return searchUtil(employee,$scope.searchText); 
                                    });
                           
                           if($scope.searchText == '')
@@ -127,10 +127,10 @@ app.controller('styleController', function($scope){
 
 // Pagination
 /* Search Text in all 3 fields */
-function searchUtil(cust,toSearch)
+function searchUtil(employee,toSearch)
 {
     /* Search Text in all 3 fields */
-    return (cust.empname.toLowerCase().indexOf(toSearch.toLowerCase()) > -1 || cust.designation.toLowerCase().indexOf(toSearch.toLowerCase()) > -1 || cust.department.toLowerCase().indexOf(toSearch.toLowerCase()) > -1 || cust.empno.toLowerCase().indexOf(toSearch.toLowerCase()) > -1)? true : false ;
+    return (employee.empname.toLowerCase().indexOf(toSearch.toLowerCase()) > -1 || employee.designation.toLowerCase().indexOf(toSearch.toLowerCase()) > -1 || employee.department.toLowerCase().indexOf(toSearch.toLowerCase()) > -1 || employee.empno.toLowerCase().indexOf(toSearch.toLowerCase()) > -1)? true : false ;
   
   }
 

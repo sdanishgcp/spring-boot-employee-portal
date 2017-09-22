@@ -13,19 +13,23 @@
 <body>
 
 <div class="container" ng-app="app">
-	<table>
-		<tr>
-			<td>
-				<div ng-controller="styleController" ng-style="styleObj">
-					<p>Welcome to the Employee Portals</p>
-				</div>
-			</td>
-		</tr>
-	</table>
+	<div class="col-ms-4 col-sm-4 col-xs-12 col-ms-offset-4 col-sm-offset-4 col-xs-offset-0">
+		<div class="text-center">
+		<table>
+			<tr>
+				<td>
+					<div ng-controller="styleController" ng-style="styleObj">
+						<p>Welcome to the Employee Portal</p>
+					</div>
+				</td>
+			</tr>
+		</table>
+		</div>
+	</div>
 		<br/><br/>
 		
 	<div ng-controller="postcontroller">
-		<form name="customerForm" ng-submit="submitForm()">
+		<form name="employeeForm" ng-submit="submitForm()">
 		
 		 <table>
 			<tr>
@@ -38,7 +42,7 @@
   		  	</tr>
   		  	<tr>
   		  		<td>
-  		 		 Employee #:
+  		 		 Employee No:
   		  		</td>
 		  		<td> 
 		  			<input type="text" name="empno" class="form-control" ng-model="empno" style="width: 300px"/>
@@ -75,6 +79,10 @@
 		<p>{{postResultMessage}}</p>
 	</div>
 	
+	<hr>
+	
+	
+	
 	<div ng-controller="getcontroller">
 		<button id="btn-id" ng-click="getfunction()">Get Employee Details</button>
 		  		  	<tr>
@@ -86,7 +94,7 @@
          <span class="glyphicon glyphicon-search"></span>
          </span> -->
    
-   <table >
+   <table ng-show="showTable">
          <tr>
   		  		<td>
 		  			Search:
@@ -137,12 +145,12 @@
 		         </tr>
 		  </thead>
 		  <tbody>
-		    <!--  <tr ng-repeat="cust in filteredList | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize"> -->
-		     <tr ng-repeat="cust in filteredList | orderBy:columnToOrder:reverse | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize"> 
-		   	  <td>{{ cust.empname }}</td>
-		      <td>{{ cust.empno }}</td>
-		      <td>{{ cust.designation }}</td>
-		      <td>{{ cust.department }}</td>
+		    <!--  <tr ng-repeat="employee in filteredList | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize"> -->
+		     <tr ng-repeat="employee in filteredList | orderBy:columnToOrder:reverse | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize"> 
+		   	  <td>{{ employee.empname }}</td>
+		      <td>{{ employee.empno }}</td>
+		      <td>{{ employee.designation }}</td>
+		      <td>{{ employee.department }}</td>
      		</tr>
      	  </tbody>
 		</table>
