@@ -37,7 +37,7 @@ app.controller('getcontroller', ['$scope', '$http', '$filter', '$location', func
 		$scope.data = [];
 		$scope.q = '';
       $scope.getfunction = function(){
-            var url = $location.absUrl() + "getallcustomer";
+            var url = $location.absUrl() + "getallemployee";
             
             var config = {
                 headers : {
