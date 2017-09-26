@@ -17,7 +17,7 @@ app.controller('postcontroller', function($scope, $http, $location) {
             
             
             $http.post(url, data, config).then(function (response) {
-                  $scope.postResultMessage = "Sucessful!";
+                  $scope.postResultMessage = "Successful!";
             }, function (response) {
                   $scope.postResultMessage = "Fail!";
             });
