@@ -5,7 +5,7 @@
 
 	<groupId>com.javasampleapproach.angularjs</groupId>
 	<artifactId>employee-portal</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<packaging>jar</packaging>
 	<name>SpringBootAngularJs</name>
 	<description>SpringBoot Angularjs</description>
